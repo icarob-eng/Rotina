@@ -8,12 +8,12 @@ Bem, não é exatamente o software mais bonito que fiz, mas ele funciona, geralm
 
 ## Instalação
 Para usar este app é necessário ter Java instalado e funcionando.
-Ver ![Downloads do Java para Todos os Sistemas Operacionais](https://www.java.com/pt-BR/download/manual.jsp) para a instalação do Java.
+Ver [Downloads do Java para Todos os Sistemas Operacionais](https://www.java.com/pt-BR/download/manual.jsp) para a instalação do Java.
 
 Para saber se o Java já está insatlado no seu computador, abra o terminal e digite `java -version`, se não der erro provavelmente vai dar tudo certo :)
 
 O arquivo executável que tens que baixar é `Rotina.jar`,
-![Este aqui](https://github.com/icarob-eng/Rotina/blob/master/Rotina.jar) se estiver com preguiça de procurar. Só baixar e pronto.
+[Este aqui](https://github.com/icarob-eng/Rotina/blob/master/Rotina.jar) se estiver com preguiça de procurar. Só baixar e pronto.
 
 Seu OS pode reclamar pois é um pacote de fontes desconhecidas, mas bem, se não confia em mim o source tá aí pra ti compilar kkkk.
 
