@@ -1,5 +1,3 @@
-import com.sun.java.swing.plaf.gtk.GTKLookAndFeel;
-import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 import com.formdev.flatlaf.*;
 
 import javax.swing.*;
@@ -13,7 +11,7 @@ import java.util.Scanner;
 public class MainFrame extends JFrame {
     private int lookAndFeel;
     private final File file = new File("theme_config.txt");
-    public final String[] lookAndFeelOptions = new String[]{"Padrão", "Do sistema", "Light", "Dark", "Intellij", "Darcula"};
+    public final String[] lookAndFeelOptions = new String[]{"Padrão", "Light", "Dark", "Intellij", "Darcula"};
 
     public MainFrame() {
         super("Abertura automática de aulas");
@@ -63,26 +61,15 @@ public class MainFrame extends JFrame {
             case 0:  // look and feel padrão
                 break;
             case 1:
-                try {
-                    UIManager.setLookAndFeel(new GTKLookAndFeel());  // tenta GTK, senão, tenta windows
-                } catch (Exception e) {
-                    try {
-                        UIManager.setLookAndFeel(new WindowsLookAndFeel());
-                    } catch (Exception e1) {
-                        throw new UnsupportedLookAndFeelException("Não conseguiu carregar look and feel do sistema.");
-                    }
-                }
-                break;
-            case 2:
                 UIManager.setLookAndFeel(new FlatLightLaf());
                 break;
-            case 3:
+            case 2:
                 UIManager.setLookAndFeel(new FlatDarkLaf());
                 break;
-            case 4:
+            case 3:
                 UIManager.setLookAndFeel(new FlatIntelliJLaf());
                 break;
-            case 5:
+            case 4:
                 UIManager.setLookAndFeel(new FlatDarculaLaf());
                 break;
             default:
