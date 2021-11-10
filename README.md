@@ -30,6 +30,8 @@ Pelo visto eu coloquei algumas aparências diferentes para se usar. Só escolher
 ![image](https://user-images.githubusercontent.com/54824248/141037376-baba324b-c3fc-43e9-96a7-ab82a4ba0ba2.png)
 Exemplo de aparência possível. Para ver as outras, instale, ou veja os temas da Flatlaf (o pacote de temas que usei), você que sabe.
 
+Tente deixar o 'Rotina.jar' na mesma pasta que os arquivos que ele cria para não perder os dados que configurou.
+
 ## Reportar bugs
 Manda um zap ou sei lá um e-mail? Dizendo o contexto e etc.
 
