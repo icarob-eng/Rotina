@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Rotina">
+    <output-path>$PROJECT_DIR$/out/artifacts/Rotina</output-path>
+    <root id="archive" name="Rotina.jar">
+      <element id="module-output" name="Rotina" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/formdev/flatlaf/1.6.1/flatlaf-1.6.1.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/dados.json" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/rotinas_icon.png" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/theme_config.txt" />
+    </root>
+  </artifact>
+</component>
