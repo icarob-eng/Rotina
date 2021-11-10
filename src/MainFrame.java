@@ -1,4 +1,4 @@
-//import com.sun.java.swing.plaf.gtk.GTKLookAndFeel;
+import com.sun.java.swing.plaf.gtk.GTKLookAndFeel;
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
 import com.formdev.flatlaf.*;
 
@@ -63,15 +63,15 @@ public class MainFrame extends JFrame {
             case 0:  // look and feel padrão
                 break;
             case 1:
-//                try {
-//                    UIManager.setLookAndFeel(new GTKLookAndFeel());  // tenta GTK, senão, tenta windows
-//                } catch (Exception e) {
+                try {
+                    UIManager.setLookAndFeel(new GTKLookAndFeel());  // tenta GTK, senão, tenta windows
+                } catch (Exception e) {
                     try {
                         UIManager.setLookAndFeel(new WindowsLookAndFeel());
                     } catch (Exception e1) {
                         throw new UnsupportedLookAndFeelException("Não conseguiu carregar look and feel do sistema.");
                     }
-//                }
+                }
                 break;
             case 2:
                 UIManager.setLookAndFeel(new FlatLightLaf());
