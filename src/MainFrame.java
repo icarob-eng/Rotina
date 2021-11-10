@@ -65,8 +65,12 @@ public class MainFrame extends JFrame {
             case 1:
                 try {
                     UIManager.setLookAndFeel(new GTKLookAndFeel());  // tenta GTK, senão, tenta windows
-                } catch (UnsupportedLookAndFeelException e) {
-                    UIManager.setLookAndFeel(new WindowsLookAndFeel());
+                } catch (Exception e) {
+                    try {
+                        UIManager.setLookAndFeel(new WindowsLookAndFeel());
+                    } catch (Exception e1) {
+                        throw new UnsupportedLookAndFeelException("Não conseguiu carregar look and feel do sistema.");
+                    }
                 }
                 break;
             case 2:
