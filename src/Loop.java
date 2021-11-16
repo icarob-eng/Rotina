@@ -9,7 +9,7 @@ import java.time.LocalTime;
 public class Loop {
     // loop principal do aplicativo, responsável por consultar os horários e abrir as aulas na hora certa
 
-    private static final int ANTECIP = 4, DELAY = 60;  // tempo de antecipação, em minutos e tempo de espera, em segundos
+    private static final int ANTECIP = 2, DELAY = 60;  // tempo de antecipação, em minutos e tempo de espera, em segundos
 
     public static void start(MainPanel panel){
         new Thread(() -> {
@@ -51,7 +51,7 @@ public class Loop {
 
     public static int hNow() { return LocalTime.now().getHour();}
 
-    public static int minNow() { return LocalTime.now().getMinute() - ANTECIP;}
+    public static int minNow() { return LocalTime.now().getMinute() + ANTECIP;}
 
     public static int diaSemana() { return LocalDate.now().getDayOfWeek().getValue() % 7;}
 
