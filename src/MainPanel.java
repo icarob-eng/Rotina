@@ -240,8 +240,7 @@ public class MainPanel extends JPanel {
                 JOptionPane.showMessageDialog(frame,
                         "O início do horário está depois do fim.",
                         "Paradoxo", JOptionPane.ERROR_MESSAGE);
-            }
-            else if (optionR == 1) {
+            } else if (optionR == 1) {
                 // resposta Apagar
                 horarios.remove(horario);
                 horario.delete();
@@ -266,14 +265,14 @@ public class MainPanel extends JPanel {
 
                 int optionR = JOptionPane.showOptionDialog(this, dialogAula,
                         "Dados da aula", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,
-                        null, new String[]{"Ok", "Apagar", "Cancelar"}, "Ok");
+                        null, new String[]{"Ok", "Apagar", "Abrir", "Cancelar"}, "Ok");
 
+                // recupera os valores selecionados
+                String nomeR = dialogAula.getValues()[0];
+                String linkR = dialogAula.getValues()[1];
 
                 if (optionR == 0) {
                     // resposta Ok
-                    // recupera os valores selecionados
-                    String nomeR = dialogAula.getValues()[0];
-                    String linkR = dialogAula.getValues()[1];
 
                     // atualiza os valores
                     horario.setAula(dia, nomeR, linkR);
@@ -285,6 +284,8 @@ public class MainPanel extends JPanel {
                     // resposta Apagar
                     horario.setAula(dia, "", "");
                     btn.setText("+");
+                } else if (optionR == 2) {
+                    Loop.openInBrowser(link, nome, this);
                 }
             });
         }

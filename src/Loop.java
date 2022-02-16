@@ -9,7 +9,7 @@ import java.time.LocalTime;
 public class Loop {
     // loop principal do aplicativo, responsável por consultar os horários e abrir as aulas na hora certa
 
-    private static final int ANTECIP = 2, DELAY = 60;  // tempo de antecipação, em minutos e tempo de espera, em segundos
+    private static final int ANTECIP = 2, DELAY = 30;  // tempo de antecipação, em minutos e tempo de espera, em segundos
 
     public static void start(MainPanel panel){
         new Thread(() -> {
@@ -33,13 +33,13 @@ public class Loop {
                     if (! aulaAberta.equals(aula) && ! aula.equals("")) {
                         // se a aula atual não estiver aberta e não for vazia
                         aulaAberta = aula;  // atualiza a aula
+                        try { // desbloqueia sessão
+                            Runtime.getRuntime().exec("loginctl unlock-session");
+                        } catch (IOException ignored) {}
                         openInBrowser(link, aula, panel);
 
-                        /*
-                         *
-                         * Inserir funções extras aqui !!!
-                         *
-                        */
+                        falar("São " + hNow() + " horas e " + (minNow() - ANTECIP) + " minutos. " +
+                                "Abrindo aula de " + aula + " no navegador.");
                     }
                 } else { aulaAberta = "";}  // se o horário for nulo limpa a aula aberta
 
@@ -47,6 +47,13 @@ public class Loop {
             }
         }).start();
         // loop principal para checar horários
+    }
+
+    public static void falar(String text) {
+        String c = "python3 /home/icaro/PycharmProjects/tests/voice_maker.py '" + text + "'";
+        try {
+            Runtime.getRuntime().exec(c);
+        } catch (IOException ignored) {}
     }
 
     public static int hNow() { return LocalTime.now().getHour();}
